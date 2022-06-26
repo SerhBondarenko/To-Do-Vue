@@ -1,8 +1,9 @@
 <template>
 <div>
-<div><button @click="addLike" >Like</button> <button @click="addDislike">Dislike</button></div>
-     <div>Кількість лайків: <strong>{{ likes }}</strong>  </div>
-    <div>Кількість дизлайків: <strong>{{ dislikes }}</strong>  </div>
+<div class="post"> 
+    <div> <strong>Назва:</strong> Пост про JavaScript </div>
+    <div> <strong>Опис:</strong> JavaScript універсальна мова програмування </div>
+</div>
 </div>
 </template>
 
@@ -22,5 +23,9 @@ export default {
 </script>
 
 <style>
-
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 </style>
