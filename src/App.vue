@@ -1,23 +1,41 @@
 <template>
-<div>
-<div class="post"> 
-    <div> <strong>Назва:</strong> Пост про JavaScript </div>
-    <div> <strong>Опис:</strong> JavaScript універсальна мова програмування </div>
-</div>
+<div class="app" >
+<post-form/>
+<post-list/>
 </div>
 </template>
 
 <script>
+import PostForm  from "@/components/PostForm"
+import PostList  from "@/components/PostList"
+
 export default {
+components: {
+PostForm, PostList
+},
+
     data() { 
         return{
-            likes: 0,
-            dislikes: 2,
+    posts: [
+            {id: 1, title: 'Javascript 0', body: 'Опис поста'},
+            {id: 2, title: 'Javascript 1', body: 'Опис поста'},
+            {id: 3, title: 'Javascript 2', body: 'Опис поста'},
+            {id: 4, title: 'Javascript 3', body: 'Опис поста'},
+    ],
+title: '',
+body: '',
         }
     },
     methods: {
-        addLike() {this.likes += 1},
-        addDislike() {this.dislikes += 1},
+       createPost() {
+        const newPost = {id: Date.now(),
+        title: this.title,
+        body: this.body,
+        }
+        this.posts.push(newPost);
+        this.title = "";
+        this.body = "";
+       },
     }
 }
 </script>
@@ -28,4 +46,11 @@ export default {
     padding: 0;
     box-sizing: border-box;
 }
+
+.app {
+    padding: 20px
+    }
+
+
+
 </style>
