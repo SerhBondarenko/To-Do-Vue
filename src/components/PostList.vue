@@ -6,7 +6,12 @@
 </template>
 
 <script>
-
+export default {
+    props: {
+        posts: Array,
+        //required: true,
+    }
+}
 </script>
 
 <style scoped >
