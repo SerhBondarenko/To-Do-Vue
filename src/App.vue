@@ -1,7 +1,7 @@
 <template>
 <div class="app" >
-<post-form/>
-<post-list :posts="posts" />
+<post-form  @create="createPost" />
+<post-list v-bind:posts="posts"/>
 </div>
 </template>
 
@@ -22,12 +22,14 @@ PostForm, PostList
             {id: 3, title: 'Javascript 2', body: 'Опис поста'},
             {id: 4, title: 'Javascript 3', body: 'Опис поста'},
     ],
-title: '',
-body: '',
         }
     },
     methods: {
-       createPost() {
+       createPost(post) {
+        this.posts.push(post);
+console.log(post);
+
+        /*
         const newPost = {id: Date.now(),
         title: this.title,
         body: this.body,
@@ -35,6 +37,7 @@ body: '',
         this.posts.push(newPost);
         this.title = "";
         this.body = "";
+        */
        },
     }
 }
