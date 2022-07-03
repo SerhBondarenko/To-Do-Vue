@@ -5,7 +5,7 @@
     @remove="$emit('remove', post)"
     />
 </div>
-<h2 v-else style="color: red">Сприсок постів пустий</h2>
+<h2 v-else="posts.length === 0" style="color: red">Сприсок постів пустий</h2>
 </template>
 
 <script>
