@@ -7,6 +7,9 @@
 </div>
 <div class="post_btns">
     <my-button @click="$emit('remove', post)"
+    > Відкрити
+    </my-button>
+    <my-button @click="$emit('remove', post)"
     >
     Видалити</my-button>
 </div>
@@ -38,6 +41,9 @@ export default {
     display: flex;
     align-items: center;
     justify-content: space-between;
+}
+.post_btns{
+    display: flex;
 }
 
 </style>
