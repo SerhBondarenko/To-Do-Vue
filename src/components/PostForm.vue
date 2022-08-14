@@ -37,6 +37,11 @@ export default {
             };
         this.body = "";
         }
+    },
+    watch: {
+        handler(newVal) {
+console.log(newVal)
+        }
     }
 }
 </script>
