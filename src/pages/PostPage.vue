@@ -4,6 +4,7 @@
     <my-input
     v-model="searchQuery"
     placeholder="Пошук..."
+    v-focus
     />
     <div class="app__btns" >
  <my-button @click="shovDialog">Створити пост</my-button>
@@ -17,7 +18,7 @@
 v-if="!isPostLoading"
 />
 <div v-else>Іде завантаження...</div>
-<div ref="observer" class="observer"></div>
+<div v-intersection="loadMorePosts" class="observer"></div>
  <!--   <div class="page__wrapper">
 <div v-for="pageNumber in totalPage" :key="pageNumber" class="page" :class="{'current-page': page === pageNumber}"
 @click="changePage(pageNumber)"
@@ -113,7 +114,7 @@ alert('Помилка')
      mounted() {
         this.fetchPosts();
 console.log(this.$refs.observer);
-        const options = {
+     /*   const options = {
     rootMargin: '0px',
     threshold: 1.0
 }
@@ -126,7 +127,7 @@ const callback = (entries, observer) => {
 
 };
 const observer = new IntersectionObserver(callback, options);
-observer.observe(this.$refs.observer);
+observer.observe(this.$refs.observer);*/
        },
        computed: {
 sortedPost() {
